@@ -122,22 +122,22 @@ const Badge: React.FC<BadgeProps> = ({ variant = 'default', className, children 
   )
 }
 
-// Mock Components (to replace custom imports)
-const ProgressDashboard: React.FC = () => (
-  <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-    <h3 className="text-2xl font-bold text-foreground mb-4">Your Progress Dashboard</h3>
-    <p className="text-muted-foreground mb-6">Track your learning journey and see how far you&apos;ve come.</p>
-    <div className="bg-background rounded-lg p-6 shadow-md border">
-      <div className="flex items-center justify-between mb-4">
-        <span className="font-medium">Overall Completion</span>
-        <span className="font-bold text-primary">42%</span>
-      </div>
-      <div className="w-full bg-secondary rounded-full h-2.5">
-        <div className="bg-primary h-2.5 rounded-full" style={{width: "42%"}}></div>
-      </div>
-    </div>
-  </div>
-)
+
+// const ProgressDashboard: React.FC = () => (
+//   <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+//     <h3 className="text-2xl font-bold text-foreground mb-4">Your Progress Dashboard</h3>
+//     <p className="text-muted-foreground mb-6">Track your learning journey and see how far you&apos;ve come.</p>
+//     <div className="bg-background rounded-lg p-6 shadow-md border">
+//       <div className="flex items-center justify-between mb-4">
+//         <span className="font-medium">Overall Completion</span>
+//         <span className="font-bold text-primary">42%</span>
+//       </div>
+//       <div className="w-full bg-secondary rounded-full h-2.5">
+//         <div className="bg-primary h-2.5 rounded-full" style={{width: "42%"}}></div>
+//       </div>
+//     </div>
+//   </div>
+// )
 
 const LanguageSwitcher: React.FC = () => (
   <div className="flex items-center">
@@ -162,7 +162,7 @@ const AppHeader: React.FC = () => {
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="hidden font-bold sm:inline-block">MIL Cameroon</span>
+          <span className="hidden font-bold sm:inline-block">Clean Media</span>
         </Link>
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
@@ -210,7 +210,7 @@ const HeroSection: React.FC = () => (
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
         Empowering Digital Citizens
         <span className="mt-2 block bg-gradient-to-r from-primary via-blue-500 to-teal-400 bg-clip-text text-transparent">
-          for a Safer Cameroon
+          for a Kinder World
         </span>
       </h1>
       <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground sm:text-xl leading-relaxed">
@@ -384,12 +384,14 @@ const AppFooter: React.FC = () => (
 // Main Component for the Homepage
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans antialiased">
+  <div className="min-h-screen bg-background text-foreground antialiased" style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif' }}>
       <AppHeader />
+          {/* <span className="hidden font-bold sm:inline-block">abetter one</span>
+          <span className="text-lg font-semibold text-foreground">abetter one</span> */}
       <main>
         <HeroSection />
         <div className="bg-slate-50 dark:bg-slate-900/50 py-12 sm:py-16">
-          <ProgressDashboard />
+          {/* <ProgressDashboard /> */}
         </div>
         <LearningPathsSection />
         <WhyItMattersSection />
