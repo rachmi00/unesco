@@ -79,6 +79,9 @@ import React from 'react';
 
 export interface BadgeInfo {
   name: string;
-  icon: React.ElementType;
+  // Icons are provided as either a React component (ElementType) or
+  // a short identifier string from the service. Accept both to avoid
+  // brittle conversions at the call site.
+  icon: React.ElementType | string;
   color: string;
 }

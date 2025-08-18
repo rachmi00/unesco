@@ -218,7 +218,7 @@ export const teenScenarios: TeenScenario[] = [
     platform_details: {
       followers: "15.3K",
       likes: "892",
-      retweets: "234",
+      // retweets: "234",
       comments: "156",
     },
     question: "This thread is gaining traction and being retweeted by influential accounts. How do you respond?",
