@@ -8,7 +8,6 @@ import {
   Users, 
   Award, 
   Trophy, 
-  Clock, 
   CheckCircle,
   ArrowRight,
   TrendingUp
@@ -35,7 +34,7 @@ export function ProgressDashboard() {
   const hasAnyProgress = progress.teens.completed || progress.adults.completed
   const completedModules = progress.totalModulesCompleted
   const totalScore = (progress.teens.score || 0) + (progress.adults.score || 0)
-  const totalMaxScore = (progress.teens.maxScore || 32) + (progress.adults.maxScore || 32) // Assuming 8 scenarios * 4 points each
+  //const totalMaxScore = (progress.teens.maxScore || 32) + (progress.adults.maxScore || 32) // Assuming 8 scenarios * 4 points each
 
   if (!hasAnyProgress) {
     return (
@@ -208,7 +207,7 @@ export function ProgressDashboard() {
                 Congratulations on Your Progress!
               </h3>
               <p className="text-muted-foreground mb-4">
-                You're building important skills for digital citizenship and inclusive communication.
+                You are building important skills for digital citizenship and inclusive communication.
               </p>
               {completedModules < 2 && (
                 <Button asChild>

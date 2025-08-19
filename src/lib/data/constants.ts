@@ -1,5 +1,3 @@
-import { PlatformType, AdultCategory } from "@/types/scenarios"
-
 // Constants for scenario data and UI
 
 export const PLATFORM_CONFIGS = {
