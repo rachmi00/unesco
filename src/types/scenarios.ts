@@ -1,7 +1,7 @@
 // Core scenario types and interfaces
 
 export type PlatformType = "tiktok" | "instagram" | "whatsapp" | "youtube" | "twitter" | "facebook"
-export type AdultCategory = "workplace" | "community" | "political" | "media" | "business"
+export type AdultCategory = "workplace" | "community" | "political" | "media" | "business" | "linkedin" | "twitter" | "facebook" | "youtube" | "instagram"  | "whatsapp" | "tiktok" |"education"
 export type ImpactLevel = "positive" | "neutral" | "negative"
 
 export interface PlatformDetails {
