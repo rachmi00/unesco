@@ -61,6 +61,8 @@ export const ADULT_CATEGORY_CONFIGS = {
   }
 } as const
 
+export type AdultCategory = keyof typeof ADULT_CATEGORY_CONFIGS;
+
 export const BADGE_LEVELS = {
   teen: {
     90: { name: "Digital Rights Defender", icon: "Shield", color: "text-blue-600" },

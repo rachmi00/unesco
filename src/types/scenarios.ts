@@ -1,7 +1,17 @@
 // Core scenario types and interfaces
 
-export type PlatformType = "tiktok" | "instagram" | "whatsapp" | "youtube" | "twitter" | "facebook"
-export type AdultCategory = "workplace" | "community" | "political" | "media" | "business" | "linkedin" | "twitter" | "facebook" | "youtube" | "instagram"  | "whatsapp" | "tiktok" |"education"
+
+import { ADULT_CATEGORY_CONFIGS, PLATFORM_CONFIGS } from "@/lib/data/constants";
+
+// --- IMPROVED TYPES ---
+// These types are now derived directly from your constant objects,
+// ensuring they are always in sync and preventing indexing errors.
+export type PlatformType = keyof typeof PLATFORM_CONFIGS;
+export type AdultCategory = keyof typeof ADULT_CATEGORY_CONFIGS;
+// --- END IMPROVED TYPES ---
+
+// export type PlatformType = "tiktok" | "instagram" | "whatsapp" | "youtube" | "twitter" | "facebook"
+// export type AdultCategory = "workplace" | "community" | "political" | "media" | "business" | "linkedin" | "twitter" | "facebook" | "youtube" | "instagram"  | "whatsapp" | "tiktok" |"education"
 export type ImpactLevel = "positive" | "neutral" | "negative"
 
 export interface PlatformDetails {

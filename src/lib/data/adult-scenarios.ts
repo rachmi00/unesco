@@ -423,7 +423,7 @@ export const adultScenarios: AdultScenario[] = [
   },
   {
     id: 6,
-    category: "education",
+    category: "workplace",
     title: "University Campus - Religious Discrimination",
     context:
       "You're a university student leader when tensions arise between Christian and Muslim student groups over campus facilities:",
