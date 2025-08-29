@@ -4,7 +4,7 @@ export const aniseRayStory: StoryData = {
   scene1: {
     id: "scene1",
     text: "Ray casually mentions that women from your ethnic group 'are always lazy' with a dismissive shrug.",
-    image: "/anise_upset.png",
+    image: "/anise_upset.webp",
     choices: [
       { text: "Laugh it off awkwardly", nextScene: "scene2a" },
       { text: "Go quiet and ignore it", nextScene: "scene2b" },
@@ -14,7 +14,7 @@ export const aniseRayStory: StoryData = {
   scene2a: {
     id: "scene2a",
     text: "Ray smirks, thinking you agreed. Inside, you feel a twist of anger.",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Later, scroll Facebook", nextScene: "scene3" }
     ],
@@ -23,7 +23,7 @@ export const aniseRayStory: StoryData = {
   scene2b: {
     id: "scene2b",
     text: "The silence hangs heavy. Ray changes the subject like nothing happened.",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Later, scroll Facebook", nextScene: "scene3" }
     ],
@@ -32,7 +32,7 @@ export const aniseRayStory: StoryData = {
   scene3: {
     id: "scene3",
     text: "Hours later, scrolling Facebook, you see a video: 'What tribe would you not date from?'",
-    image: "/video.png",
+    image: "/video.webp",
     choices: [
       { text: "Watch the video", nextScene: "scene4" }
     ],
@@ -41,7 +41,7 @@ export const aniseRayStory: StoryData = {
   scene4: {
     id: "scene4",
     text: "A young man declares: 'I wouldn't date a girl from Ray's tribe because they're all prostitutes.'",
-    image: "/anise_upset.png",
+    image: "/anise_upset.webp",
     choices: [
       { text: "Screenshot & post revenge comment", nextScene: "retaliation1" },
       { text: "Report the video & message Ray privately", nextScene: "dialogue1" },
@@ -53,7 +53,7 @@ export const aniseRayStory: StoryData = {
   retaliation1: {
     id: "retaliation1",
     text: "Your post explodes overnight. People argue bitterly, some defending you, others piling on insults about both tribes.",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Keep fighting back", nextScene: "retaliation2" },
       { text: "Delete the post in regret", nextScene: "retaliation_delete" },
@@ -63,7 +63,7 @@ export const aniseRayStory: StoryData = {
   retaliation2: {
     id: "retaliation2",
     text: "Friends DM you to stop. Your inbox fills with slurs and threats. The bitterness spreads beyond the screen.",
-    image: "/anise_upset.png",
+    image: "/anise_upset.webp",
     choices: [
       { text: "Defend yourself louder", nextScene: "retaliation3" },
       { text: "Log off in tears", nextScene: "retaliation_burnout" },
@@ -73,21 +73,21 @@ export const aniseRayStory: StoryData = {
   retaliation3: {
     id: "retaliation3",
     text: "You become the face of an online feud. Ray avoids you. Mutual friends take sides. The cycle of hate deepens.",
-    image: "/background.png",
+    image: "/background.webp",
     isEnding: true,
     outcomeType: "negative",
   },
   retaliation_delete: {
     id: "retaliation_delete",
     text: "You delete your comment, but the screenshots live on. Rumors about you spread anyway.",
-    image: "/anise_upset.png",
+    image: "/anise_upset.webp",
     isEnding: true,
     outcomeType: "negative",
   },
   retaliation_burnout: {
     id: "retaliation_burnout",
     text: "You log off, shaken. The noise continues without you. You feel both relieved and powerless.",
-    image: "/anise_upset.png",
+    image: "/anise_upset.webp",
     isEnding: true,
     outcomeType: "negative",
   },
@@ -95,7 +95,7 @@ export const aniseRayStory: StoryData = {
   dialogue1: {
     id: "dialogue1",
     text: "You message Ray: 'Your words earlier really hurt me. I saw a video targeting your tribe and it made me think.'",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Send as is", nextScene: "dialogue2" },
       { text: "Rewrite angrily instead", nextScene: "retaliation1" },
@@ -105,7 +105,7 @@ export const aniseRayStory: StoryData = {
   dialogue2: {
     id: "dialogue2",
     text: "Ray replies: 'Come on, it was just a joke. Don't be so sensitive.'",
-    image: "/ray.png",
+    image: "/ray.webp",
     choices: [
       { text: "Call him out firmly", nextScene: "dialogue3" },
       { text: "Stay polite and explain again", nextScene: "dialogue4" },
@@ -115,7 +115,7 @@ export const aniseRayStory: StoryData = {
   dialogue3: {
     id: "dialogue3",
     text: "You tell him: 'Jokes like that reinforce stereotypes. Imagine if I said the same about your people.'",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Wait for his response", nextScene: "dialogue5" }
     ],
@@ -124,7 +124,7 @@ export const aniseRayStory: StoryData = {
   dialogue4: {
     id: "dialogue4",
     text: "You write: 'I don't think you realize how much it stings when it's said about me and my people.'",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "Wait for his response", nextScene: "dialogue5" }
     ],
@@ -133,7 +133,7 @@ export const aniseRayStory: StoryData = {
   dialogue5: {
     id: "dialogue5",
     text: "Ray pauses. After minutes, he types: '...Okay, I get your point. I never thought of it that way.'",
-    image: "/ray.png",
+    image: "/ray.webp",
     choices: [
       { text: "Thank him and end conversation", nextScene: "cycle_breaker" },
       { text: "Ask him to reflect more deeply", nextScene: "dialogue6" },
@@ -143,7 +143,7 @@ export const aniseRayStory: StoryData = {
   dialogue6: {
     id: "dialogue6",
     text: "You push: 'Words shape attitudes. If we stop laughing at stereotypes, maybe they'll lose power.'",
-    image: "/background.png",
+    image: "/background.webp",
     choices: [
       { text: "See how he reacts", nextScene: "cycle_breaker" }
     ],
@@ -161,7 +161,7 @@ export const aniseRayStory: StoryData = {
   apathy: {
     id: "apathy",
     text: "You scroll past. The words sting but fade. Nothing changes, but nothing worsens either.",
-    image: "/background.png",
+    image: "/background.webp",
     isEnding: true,
     outcomeType: "neutral",
   },
