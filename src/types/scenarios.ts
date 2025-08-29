@@ -1,18 +1,15 @@
 // Core scenario types and interfaces
 
-
 import { ADULT_CATEGORY_CONFIGS, PLATFORM_CONFIGS } from "@/lib/data/constants";
 
-// --- IMPROVED TYPES ---
-// These types are now derived directly from your constant objects,
-// ensuring they are always in sync and preventing indexing errors.
+// Platform and category types derived from constants
 export type PlatformType = keyof typeof PLATFORM_CONFIGS;
 export type AdultCategory = keyof typeof ADULT_CATEGORY_CONFIGS;
-// --- END IMPROVED TYPES ---
 
-// export type PlatformType = "tiktok" | "instagram" | "whatsapp" | "youtube" | "twitter" | "facebook"
-// export type AdultCategory = "workplace" | "community" | "political" | "media" | "business" | "linkedin" | "twitter" | "facebook" | "youtube" | "instagram"  | "whatsapp" | "tiktok" |"education"
+// Impact and difficulty levels
 export type ImpactLevel = "positive" | "neutral" | "negative"
+export type DifficultyLevel = "beginner" | "intermediate" | "advanced"
+export type ScenarioStatus = "not-started" | "in-progress" | "completed"
 
 export interface PlatformDetails {
   followers?: string
@@ -20,6 +17,8 @@ export interface PlatformDetails {
   views?: string
   shares?: string
   comments?: string
+  timestamp?: string
+  visibility?: "public" | "private" | "friends"
 }
 
 export interface BaseScenario {
@@ -28,23 +27,31 @@ export interface BaseScenario {
   context: string
   question: string
   realWorldContext?: string
+  difficulty?: DifficultyLevel
+  estimatedTime?: number // in minutes
+  tags?: string[]
 }
 
-export interface TeenOption {
+export interface BaseOption {
+  id: string | number
   text: string
+  explanation: string
+  isRecommended?: boolean
+}
+
+export interface TeenOption extends BaseOption {
   points: number
   consequence: string
-  explanation: string
   legalRisk?: string
+  socialImpact?: string
 }
 
-export interface AdultOption {
-  text: string
+export interface AdultOption extends BaseOption {
   impact: ImpactLevel
   consequences: string[]
-  explanation: string
   legalNote: string
   professionalRisk?: string
+  stakeholderImpact?: Record<string, ImpactLevel>
 }
 
 export interface TeenScenario extends BaseScenario {
@@ -73,25 +80,64 @@ export interface ScenarioProgress {
   completed: boolean;
 }
 
-export interface ModuleState<T> {
+export interface ModuleState<T extends BaseScenario> {
   scenarios: T[]
   progress: ScenarioProgress
+  isLoading: boolean
+  error: Error | null
   actions: {
     selectOption: (index: number) => void
     nextScenario: () => void
     resetModule: () => void
+    retryOnError: () => void
   }
 }
 
-import React from 'react';
-
-// ... existing code ...
-
+// Badge and achievement system
 export interface BadgeInfo {
-  name: string;
-  // Icons are provided as either a React component (ElementType) or
-  // a short identifier string from the service. Accept both to avoid
-  // brittle conversions at the call site.
-  icon: React.ElementType | string;
-  color: string;
+  id: string
+  name: string
+  description: string
+  icon: React.ElementType | string
+  color: string
+  criteria: {
+    minScore?: number
+    completedScenarios?: number
+    perfectScores?: number
+    timeLimit?: number
+  }
 }
+
+export interface UserAchievement {
+  badgeId: string
+  earnedAt: Date
+  score: number
+  metadata?: Record<string, unknown>
+}
+
+// Validation schemas
+export interface ValidationResult {
+  isValid: boolean
+  errors: string[]
+  warnings: string[]
+}
+
+export interface ScenarioValidation {
+  validateScenario: (scenario: BaseScenario) => ValidationResult
+  validateOption: (option: BaseOption) => ValidationResult
+  validateProgress: (progress: ScenarioProgress) => ValidationResult
+}
+
+// Module configuration
+export interface ModuleConfig {
+  id: string
+  title: string
+  description: string
+  type: "teen" | "adult"
+  maxPoints: number
+  passingScore: number
+  badges: BadgeInfo[]
+  prerequisites?: string[]
+}
+
+import React from 'react';

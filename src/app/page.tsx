@@ -184,6 +184,11 @@ const AppHeader: React.FC = () => {
                 Adult & Professional
               </Button>
             </Link>
+            <Link href="/story" className="block">
+              <Button variant="ghost" className="w-full justify-start">
+                Interactive Story
+              </Button>
+            </Link>
             <div className="border-t my-2"></div>
             <LanguageSwitcher />
           </div>
@@ -255,12 +260,12 @@ const LearningPathsSection: React.FC = () => (
           Choose Your Learning Path
         </h2>
         <p className="text-[24px] text-gray-600 leading-relaxed">
-          We offer two distinct, age-appropriate modules designed to address
+          We offer three distinct learning experiences designed to address
           hate speech in contexts relevant to your life
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {/* Digital Citizenship Card */}
         <div className="bg-white rounded-xl border-2 border-l-[#1b8ffb] p-8 shadow-sm transition-shadow duration-300 flex flex-col">
           <div className="flex-grow">
@@ -317,6 +322,38 @@ const LearningPathsSection: React.FC = () => (
           <Link href="/adults" className="block mt-auto">
             <Button className="w-1/2 bg-[#1b8ffb] hover:bg-[#1b8ffb]/90 text-white font-semibold h-11 rounded-lg transition-colors duration-300 lowercase">
               start this module
+            </Button>
+          </Link>
+        </div>
+
+        {/* Interactive Story Card */}
+        <div className="bg-white rounded-xl border-2 border-l-[#1b8ffb] p-8 shadow-sm transition-shadow duration-300 flex flex-col">
+          <div className="flex-grow">
+            <h3 className="text-2xl font-bold text-black mb-2">
+              Interactive Story
+            </h3>
+            <ul className="space-y-4 mb-8 mt-6 text-gray-700">
+              <li className="flex items-start">
+                <div className="w-2 h-2 rounded-full bg-gray-300 mt-2 mr-3 flex-shrink-0"></div>
+                <span>Experience &ldquo;Anise & Ray&rdquo; narrative</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 rounded-full bg-gray-300 mt-2 mr-3 flex-shrink-0"></div>
+                <span>Learn to break cycles of hate speech</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 rounded-full bg-gray-300 mt-2 mr-3 flex-shrink-0"></div>
+                <span>Make meaningful choices with real consequences</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 rounded-full bg-gray-300 mt-2 mr-3 flex-shrink-0"></div>
+                <span>Earn badges for positive outcomes</span>
+              </li>
+            </ul>
+          </div>
+          <Link href="/story" className="block mt-auto">
+            <Button className="w-1/2 bg-[#1b8ffb] hover:bg-[#1b8ffb]/90 text-white font-semibold h-11 rounded-lg transition-colors duration-300 lowercase">
+              start this story
             </Button>
           </Link>
         </div>

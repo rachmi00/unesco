@@ -80,3 +80,12 @@ export const BADGE_LEVELS = {
 
 export const MAX_POINTS_PER_SCENARIO = 4
 export const SCENARIOS_PER_MODULE = 8
+
+// Story module badges
+export const STORY_BADGES = {
+  "Cycle Breaker Badge": {
+    name: "Cycle Breaker Badge",
+    icon: "ShieldCheck",
+    color: "from-green-500 to-emerald-600"
+  }
+} as const

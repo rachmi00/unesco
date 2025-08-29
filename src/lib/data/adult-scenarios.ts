@@ -24,7 +24,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "As a committee member, how do you address this discriminatory statement?",
     options: [
       {
-        text: "Stay silent to maintain professional relationships and avoid conflict",
+id: "1a",
+text: "Stay silent to maintain professional relationships and avoid conflict",
         impact: "negative",
         consequences: [
           "A qualified Anglophone engineer loses the job opportunity and struggles to feed his family",
@@ -40,7 +41,8 @@ export const adultScenarios: AdultScenario[] = [
           "Silent complicity in discrimination can destroy your professional reputation when the truth inevitably comes out.",
       },
       {
-        text: "Privately discuss concerns with HR after the meeting",
+id: "1b",
+text: "Privately discuss concerns with HR after the meeting",
         impact: "neutral",
         consequences: [
           "The current candidate is still rejected due to bias",
@@ -54,7 +56,8 @@ export const adultScenarios: AdultScenario[] = [
           "HR departments have legal obligations to address discrimination complaints promptly and thoroughly.",
       },
       {
-        text: "Immediately challenge the statement citing legal requirements and company values",
+id: "1c",
+text: "Immediately challenge the statement citing legal requirements and company values",
         impact: "positive",
         consequences: [
           "The qualified candidate gets fair consideration and potentially the job",
@@ -68,7 +71,8 @@ export const adultScenarios: AdultScenario[] = [
           "Actively preventing workplace discrimination demonstrates good faith compliance with labor laws and reduces legal liability.",
       },
       {
-        text: "Document the statement, report to authorities, and propose diversity training for leadership",
+id: "1d",
+text: "Document the statement, report to authorities, and propose diversity training for leadership",
         impact: "positive",
         consequences: [
           "Systematic change prevents future discrimination against many candidates",
@@ -108,7 +112,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "How do you respond to this ethnic stereotyping in a business context?",
     options: [
       {
-        text: "Agree to avoid potential business complications",
+id: "1e",
+text: "Agree to avoid potential business complications",
         impact: "negative",
         consequences: [
           "A successful Bamileke business owner loses a major contract and lays off 20 employees",
@@ -124,7 +129,8 @@ export const adultScenarios: AdultScenario[] = [
           "Discriminatory business practices will destroy your professional reputation once they become public knowledge.",
       },
       {
-        text: "Redirect the conversation to focus on individual qualifications and track records",
+id: "1f",
+text: "Redirect the conversation to focus on individual qualifications and track records",
         impact: "neutral",
         consequences: [
           "Current partnership may proceed on merit but bias remains unchallenged",
@@ -138,7 +144,8 @@ export const adultScenarios: AdultScenario[] = [
           "While not actively discriminatory, failing to address bias may not provide full legal protection in discrimination cases.",
       },
       {
-        text: "Challenge the stereotypes with facts about successful Bamileke businesses and entrepreneurs",
+id: "1g",
+text: "Challenge the stereotypes with facts about successful Bamileke businesses and entrepreneurs",
         impact: "positive",
         consequences: [
           "Partner's perspective changes, leading to more inclusive business practices",
@@ -152,7 +159,8 @@ export const adultScenarios: AdultScenario[] = [
           "Actively countering discrimination demonstrates good faith compliance with anti-discrimination laws in business.",
       },
       {
-        text: "Terminate negotiations and report discriminatory practices to relevant business authorities",
+id: "1h",
+text: "Terminate negotiations and report discriminatory practices to relevant business authorities",
         impact: "positive",
         consequences: [
           "You maintain your integrity and attract ethical business partners",
@@ -192,7 +200,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "How do you handle this discriminatory call on live radio?",
     options: [
       {
-        text: "Let the caller continue because it generates listener engagement",
+id: "1i",
+text: "Let the caller continue because it generates listener engagement",
         impact: "negative",
         consequences: [
           "Young girls listening lose confidence in pursuing leadership careers",
@@ -208,7 +217,8 @@ export const adultScenarios: AdultScenario[] = [
           "Promoting gender discrimination will damage your reputation and limit your career opportunities.",
       },
       {
-        text: "Cut the call short without addressing the discriminatory content",
+id: "1j",
+text: "Cut the call short without addressing the discriminatory content",
         impact: "neutral",
         consequences: [
           "Discriminatory message is stopped but listeners don't understand why",
@@ -222,7 +232,8 @@ export const adultScenarios: AdultScenario[] = [
           "Cutting discriminatory content prevents violations but may not demonstrate full professional responsibility.",
       },
       {
-        text: "Cut the call and explain why gender equality benefits everyone",
+id: "1k",
+text: "Cut the call and explain why gender equality benefits everyone",
         impact: "positive",
         consequences: [
           "Listeners learn about successful women leaders and their contributions",
@@ -236,7 +247,8 @@ export const adultScenarios: AdultScenario[] = [
           "Promoting gender equality demonstrates compliance with anti-discrimination laws and professional standards.",
       },
       {
-        text: "End the call, educate listeners, and feature successful women leaders in upcoming shows",
+id: "1l",
+text: "End the call, educate listeners, and feature successful women leaders in upcoming shows",
         impact: "positive",
         consequences: [
           "Your show becomes a platform for showcasing women's achievements",
@@ -276,7 +288,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "How do you respond to this discriminatory post in your Facebook group?",
     options: [
       {
-        text: "Leave the post up because it generates discussion about resource allocation",
+id: "1m",
+text: "Leave the post up because it generates discussion about resource allocation",
         impact: "negative",
         consequences: [
           "People with disabilities in your community feel unwelcome and excluded",
@@ -292,7 +305,8 @@ export const adultScenarios: AdultScenario[] = [
           "Allowing disability discrimination will damage your reputation and potentially lead to legal issues.",
       },
       {
-        text: "Delete the post quietly without explanation",
+id: "1n",
+text: "Delete the post quietly without explanation",
         impact: "neutral",
         consequences: [
           "Immediate discriminatory content is removed but poster may try again",
@@ -306,7 +320,8 @@ export const adultScenarios: AdultScenario[] = [
           "Removing discriminatory content shows good faith moderation but education may be needed for full compliance.",
       },
       {
-        text: "Delete the post and explain the value and rights of people with disabilities",
+id: "1o",
+text: "Delete the post and explain the value and rights of people with disabilities",
         impact: "positive",
         consequences: [
           "Group members learn about disability rights and the importance of inclusion",
@@ -320,7 +335,8 @@ export const adultScenarios: AdultScenario[] = [
           "Promoting disability rights and inclusion demonstrates compliance with anti-discrimination laws and inclusive development principles.",
       },
       {
-        text: "Remove post, ban user, create educational content about disability inclusion, and invite disability advocates",
+id: "1p",
+text: "Remove post, ban user, create educational content about disability inclusion, and invite disability advocates",
         impact: "positive",
         consequences: [
           "Your group becomes a model for inclusive community development",
@@ -360,7 +376,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "How do you respond to this dangerous false rumor in your WhatsApp group?",
     options: [
       {
-        text: "Forward the message to other groups to warn more people",
+id: "1q",
+text: "Forward the message to other groups to warn more people",
         impact: "negative",
         consequences: [
           "Panic spreads across multiple communities and innocent Fulani families are attacked",
@@ -376,7 +393,8 @@ export const adultScenarios: AdultScenario[] = [
           "Spreading dangerous misinformation destroys your credibility and can lead to criminal prosecution.",
       },
       {
-        text: "Ignore the message and don't respond to avoid getting involved",
+id: "1r",
+text: "Ignore the message and don't respond to avoid getting involved",
         impact: "negative",
         consequences: [
           "False rumor continues spreading and may lead to violence against innocent people",
@@ -390,7 +408,8 @@ export const adultScenarios: AdultScenario[] = [
           "Failing to challenge false information in groups where you have influence may create legal liability if violence results.",
       },
       {
-        text: "Ask for proof and remind group about checking facts before sharing",
+id: "1s",
+text: "Ask for proof and remind group about checking facts before sharing",
         impact: "positive",
         consequences: [
           "Group members start questioning suspicious messages before sharing them",
@@ -404,7 +423,8 @@ export const adultScenarios: AdultScenario[] = [
           "Promoting fact-checking and media literacy demonstrates responsible digital citizenship and helps prevent legal issues.",
       },
       {
-        text: "Debunk the rumor with facts, report to authorities, educate group about rumor dangers",
+id: "1t",
+text: "Debunk the rumor with facts, report to authorities, educate group about rumor dangers",
         impact: "positive",
         consequences: [
           "Dangerous false information is completely neutralized before causing harm",
@@ -444,7 +464,8 @@ export const adultScenarios: AdultScenario[] = [
     question: "How do you address this religious discrimination as a student leader?",
     options: [
       {
-        text: "Support the statement to maintain Christian student support",
+id: "1u",
+text: "Support the statement to maintain Christian student support",
         impact: "negative",
         consequences: [
           "Muslim students face harassment and some drop out of university",
@@ -460,7 +481,8 @@ export const adultScenarios: AdultScenario[] = [
           "Leading religious discrimination will permanently damage your reputation and future career prospects.",
       },
       {
-        text: "Stay neutral and avoid taking sides in religious matters",
+id: "1v",
+text: "Stay neutral and avoid taking sides in religious matters",
         impact: "neutral",
         consequences: [
           "Religious tensions continue to simmer without resolution",
@@ -474,7 +496,8 @@ export const adultScenarios: AdultScenario[] = [
           "Student leaders have responsibilities to promote equality; neutrality may not fulfill these obligations.",
       },
       {
-        text: "Organize interfaith dialogue sessions to promote understanding",
+id: "1w",
+text: "Organize interfaith dialogue sessions to promote understanding",
         impact: "positive",
         consequences: [
           "Students from different religions start working together on common goals",
@@ -488,7 +511,8 @@ export const adultScenarios: AdultScenario[] = [
           "Promoting interfaith dialogue demonstrates commitment to constitutional values and helps prevent discrimination.",
       },
       {
-        text: "Condemn the discrimination, advocate for equal religious facilities, and implement anti-discrimination policies",
+id: "1x",
+text: "Condemn the discrimination, advocate for equal religious facilities, and implement anti-discrimination policies",
         impact: "positive",
         consequences: [
           "All religious groups gain equal access to campus facilities and resources",

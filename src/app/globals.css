@@ -63,3 +63,116 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+/* Fun animations for story components */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.story-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.story-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.story-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.story-bounce {
+  animation: bounce-subtle 0.6s ease-in-out;
+}
+
+/* Enhanced hover effects for desktop */
+@media (min-width: 1024px) {
+  .story-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+  }
+  
+  .story-choice:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+  }
+}
+
+/* Pixel art image styling */
+.pixel-art {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}/* Celeb
+ration effects for story completion */
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.6); }
+}
+
+.celebration-confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+  animation: confetti-fall 3s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.celebration-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  .story-card {
+    margin: 0.5rem;
+  }
+  
+  .story-choice {
+    padding: 1rem;
+    min-height: 48px;
+  }
+}
+
+/* Enhanced tablet experience */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .story-card {
+    max-width: 90vw;
+  }
+}
+
+/* Ultra-wide desktop enhancements */
+@media (min-width: 1440px) {
+  .story-card {
+    max-width: 1200px;
+  }
+  
+  .story-choice {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+  }
+}

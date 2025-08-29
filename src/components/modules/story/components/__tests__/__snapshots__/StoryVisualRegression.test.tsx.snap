@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Story Visual Regression Tests Complete Story Flow Visual Consistency captures visual snapshots of key story moments for regression testing: story-initial-scene 1`] = `
+<div
+  class="flex items-center justify-center min-h-[400px]"
+  data-testid="story-loading-state"
+>
+  <div
+    class="flex items-center gap-3 text-gray-600"
+  >
+    <div
+      class="w-5 h-5 animate-spin"
+      data-testid="loader-icon"
+    />
+    <span>
+      Loading story...
+    </span>
+  </div>
+</div>
+`;

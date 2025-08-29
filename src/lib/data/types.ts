@@ -1,6 +1,14 @@
-// Extended types for data handling and UI state
+// UI-specific types and component interfaces
 
 import { ReactNode, ComponentType } from 'react'
+import { 
+  BaseScenario, 
+  TeenScenario, 
+  AdultScenario, 
+  TeenOption,
+  AdultOption,
+  ScenarioProgress
+} from '@/types/scenarios'
 
 // Base component props with strict typing
 export interface ComponentProps {
@@ -8,33 +16,23 @@ export interface ComponentProps {
   children?: ReactNode
 }
 
-// Core data models with proper typing
-export interface Scenario {
-  id: string | number
-  title: string
-  description: string
-  options: Option[]
-  context?: string
-  metadata?: Record<string, unknown>
-}
-
-export interface Option {
-  id: string | number
-  text: string
-  points: number
-  feedback?: string
-  isCorrect?: boolean
-  explanation?: string
-}
-
 // Component props with strict typing
 export interface ScenarioCardProps extends ComponentProps {
-  scenario: Scenario
+  scenario: BaseScenario
   showDetails?: boolean
+  onStart?: () => void
 }
 
-export interface OptionCardProps extends ComponentProps {
-  option: Option
+export interface TeenOptionCardProps extends ComponentProps {
+  option: TeenOption
+  index: number
+  isSelected: boolean
+  showResult: boolean
+  onSelect: () => void
+}
+
+export interface AdultOptionCardProps extends ComponentProps {
+  option: AdultOption
   index: number
   isSelected: boolean
   showResult: boolean
@@ -65,132 +63,77 @@ export interface ErrorBoundaryProps extends ComponentProps {
   children: ReactNode
 }
 
-// State management types with proper return type definitions
-export interface UseScenarioProgressReturn {
-  currentScenario: number
-  selectedOption: number | null
-  showResult: boolean
-  totalPoints: number
-  scenarioPoints: number[]
-  completed: boolean
+// Hook return types
+export interface UseScenarioProgressReturn extends ScenarioProgress {
   selectOption: (index: number) => void
   nextScenario: () => void
   resetModule: () => void
 }
 
-export interface UseModuleStateReturn<T extends Scenario = Scenario> {
+export interface UseModuleStateReturn<T extends BaseScenario = BaseScenario> {
   scenarios: T[]
   progress: UseScenarioProgressReturn
   isLoading: boolean
   error: Error | null
+  retryOnError: () => void
 }
 
-// Platform-specific types with proper structure
-export interface PlatformDetails {
-  platform: 'twitter' | 'facebook' | 'instagram' | 'linkedin' | 'tiktok' | string
-  timestamp?: string
-  engagement?: {
-    likes?: number
-    shares?: number
-    comments?: number
-  }
-  visibility?: 'public' | 'private' | 'friends' | string
-}
-
+// Teen module specific component props
 export interface PlatformPostProps extends ComponentProps {
-  type: 'text' | 'image' | 'video' | 'link' | string
+  type: 'text' | 'image' | 'video' | 'link'
   content: string
   author: string
-  platformDetails: PlatformDetails
+  scenario: TeenScenario
 }
 
+// Adult module specific component props
 export interface StakeholderListProps extends ComponentProps {
-  stakeholders: Array<{
-    name: string
-    role: string
-    impact?: 'high' | 'medium' | 'low'
-    description?: string
-  }>
+  stakeholders: string[]
+  scenario: AdultScenario
 }
 
 export interface LegalContextProps extends ComponentProps {
-  legalContext: string
-  historicalContext: string
-  jurisdiction?: string
-  relevantLaws?: string[]
-  precedents?: Array<{
-    case: string
-    year: number
-    summary: string
-  }>
+  scenario: AdultScenario
 }
 
-// Utility types for better type safety
-export type ScenarioStatus = 'not-started' | 'in-progress' | 'completed'
-export type DifficultyLevel = 'beginner' | 'intermediate' | 'advanced'
-export type ModuleType = 'ethics' | 'legal' | 'social-media' | 'stakeholder-analysis'
-
-// Enhanced module configuration
-export interface ModuleConfig {
-  id: string
-  title: string
-  description: string
-  type: ModuleType
-  difficulty: DifficultyLevel
-  estimatedTime: number // in minutes
-  prerequisites?: string[]
-  maxPoints: number
+// Navigation and layout types
+export interface NavigationProps extends ComponentProps {
+  currentStep: number
+  totalSteps: number
+  canGoNext: boolean
+  canGoPrevious: boolean
+  onNext: () => void
+  onPrevious: () => void
 }
 
 // Event handlers with proper typing
 export interface ScenarioEventHandlers {
-  onOptionSelect: (scenarioId: string | number, optionId: string | number) => void
-  onScenarioComplete: (scenarioId: string | number, score: number) => void
-  onModuleComplete: (moduleId: string, totalScore: number) => void
+  onOptionSelect: (scenarioId: number, optionIndex: number) => void
+  onScenarioComplete: (scenarioId: number, score: number) => void
+  onModuleComplete: (totalScore: number) => void
   onError: (error: Error) => void
 }
 
-// API response types
-export interface ApiResponse<T> {
-  data: T
-  success: boolean
-  message?: string
-  timestamp: string
+// Result display component props
+export interface TeenResultDisplayProps extends ComponentProps {
+  scenario: TeenScenario
+  selectedOption: TeenOption
+  points: number
+  showBadges?: boolean
 }
 
-export type ScenarioApiResponse = ApiResponse<Scenario[]>
-
-// Form validation types
-export interface ValidationRule {
-  required?: boolean
-  minLength?: number
-  maxLength?: number
-  pattern?: RegExp
-  custom?: (value: unknown) => boolean | string
+export interface AdultResultDisplayProps extends ComponentProps {
+  scenario: AdultScenario
+  selectedOption: AdultOption
+  showImpactAnalysis?: boolean
 }
 
-export interface FormField {
-  name: string
-  label: string
-  type: 'text' | 'textarea' | 'select' | 'checkbox' | 'radio'
-  validation?: ValidationRule
-  options?: Array<{ value: string; label: string }>
-}
-
-// Analytics and tracking types
-export interface UserInteraction {
-  type: 'click' | 'select' | 'complete' | 'error'
-  elementId: string
-  timestamp: Date
-  metadata?: Record<string, unknown>
-}
-
-export interface PerformanceMetrics {
-  moduleId: string
-  userId?: string
-  startTime: Date
-  endTime?: Date
-  score: number
-  attempts: number
-  timeSpent: number // in seconds
+// Completion screen props
+export interface CompletionScreenProps extends ComponentProps {
+  totalScore: number
+  maxScore: number
+  scenarios: BaseScenario[]
+  badges: string[]
+  onRestart: () => void
+  onContinue?: () => void
 }
