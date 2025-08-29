@@ -2,7 +2,7 @@
  * Performance optimization utilities for the story module
  */
 
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import { StoryData } from '@/types/story'
 
 /**
@@ -64,29 +64,20 @@ export const useDebouncedChoiceSelection = <T>(
   onSelect: (choice: T) => void,
   delay: number = 300
 ) => {
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined)
+  
   return useCallback(
     (choice: T) => {
-      const debouncedFn = debounce((c: T) => onSelect(c), delay)
-      debouncedFn(choice)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      timeoutRef.current = setTimeout(() => onSelect(choice), delay)
     },
     [onSelect, delay]
   )
 }
 
-/**
- * Simple debounce implementation
- */
-function debounce<T extends (...args: unknown[]) => void>(
-  func: T,
-  delay: number
-): (...args: Parameters<T>) => void {
-  let timeoutId: NodeJS.Timeout
-  
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeoutId)
-    timeoutId = setTimeout(() => func(...args), delay)
-  }
-}
+
 
 /**
  * Memory-efficient story progress tracking
