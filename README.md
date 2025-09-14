@@ -1,4 +1,4 @@
-# UNESCO Interactive Learning Platform
+# Clean Media Interactive Learning Platform
 
 An interactive educational platform designed to help teens and adults navigate challenging social scenarios through immersive storytelling and decision-making experiences.
 
